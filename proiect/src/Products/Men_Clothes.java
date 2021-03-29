@@ -1,8 +1,11 @@
 package Products;
 
-import java.util.Comparator;
+import Service.Serviciu;
 
-public class Men_Clothes implements Comparable<Men_Clothes> {
+import java.util.Comparator;
+import java.util.Scanner;
+
+public class Men_Clothes implements Serviciu{
     static int nr_mclothes = 0;
     private String name, category, color, fabric;
     private double price; // dollars
@@ -11,8 +14,9 @@ public class Men_Clothes implements Comparable<Men_Clothes> {
     public Men_Clothes(){
 
     }
-    public Men_Clothes(String name, String category, String color, String fabric, double price) {
 
+    public Men_Clothes(String name, String category, String color, String fabric, double price) {
+        super();
         this.name = name;
         this.category = category;
         this.color = color;
@@ -29,6 +33,14 @@ public class Men_Clothes implements Comparable<Men_Clothes> {
 
     public String getName() {
         return name;
+    }
+
+    public void setCode(int code) {
+        this.code = code;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public String getType() {
@@ -80,8 +92,8 @@ public class Men_Clothes implements Comparable<Men_Clothes> {
         //desc --  return (int) price - this.price
     }*/
 
-    @Override
-    public int compareTo(Men_Clothes o) {
+
+  /*  public int compareTo(Men_Clothes o) {
 
         int comparecode = ((Men_Clothes) o).getCode();
 
@@ -93,20 +105,56 @@ public class Men_Clothes implements Comparable<Men_Clothes> {
 
     }
 
-    public static Comparator<Men_Clothes> NameComparator
-            = new Comparator<Men_Clothes>() {
-
-        public int compare(Men_Clothes c1, Men_Clothes c2) {
-
-            String Name1 = c1.getName().toUpperCase();
-            String Name2 = c2.getName().toUpperCase();
+    public static Comparator<Men_Clothes> NameComparator = new Comparator<Men_Clothes>() {
+        public int compare(Men_Clothes o1, Men_Clothes o2) {
+            String Name1 = o1.getName().toUpperCase();
+            String Name2 = o2.getName().toUpperCase();
 
             //ascending order
             return Name1.compareTo(Name2);
 
             //descending order
-            //return fruitName2.compareTo(fruitName1);
+            //return Name2.compareTo(Name1);
         }
+    };*/
 
-    };
+    @Override
+    public void AddProductM() {
+        Scanner add = new Scanner(System.in);
+        Men_Clothes[] insert = new Men_Clothes[10];
+
+        String name, category, color, fabric;
+        double price;
+
+
+        for(int i = 0; i < insert.length; i++)
+        {
+            System.out.println("Introduceti numele: ");
+            insert[i] = new Men_Clothes();
+            name = add.next();
+            insert[i].setName(name);
+
+            System.out.println("Introduceti categoria: ");
+            category = add.next();
+            insert[i].setCategory(category);
+
+            System.out.println("Introduceti culoarea: ");
+            color = add.next();
+            insert[i].setColor(color);
+
+            System.out.println("Introduceti materialul: ");
+            fabric = add.next();
+            insert[i].setFabric(fabric);
+
+            System.out.println("Introduceti pretul: ");
+            price = add.nextDouble();
+            insert[i].setPrice(price);
+
+            insert[i].setCode(i);
+
+        }
+    }
 }
+
+
+

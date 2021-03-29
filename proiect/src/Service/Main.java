@@ -38,7 +38,11 @@ public class Main {
             listm[i].DisplayMCLTH();
         }
 
-        //Arrays.sort(listm); // nu inteleg de ce nu merge aici"Cannot invoke "java.lang.Comparable.compareTo(Object)" because "a[runHi]" is null"
+       // Arrays.sort(listm, Men_Clothes.NameComparator); // nu inteleg de ce nu merge aici"Cannot invoke "java.lang.Comparable.compareTo(Object)" because "a[runHi]" is null"
+       // Arrays.sort(listm);
+        // for (Men_Clothes c : listm)
+         //   System.out.println( "Name: " + c.getName()  + "Code: " + c.getCode() + "Price: " + c.getPrice());
+
 
         Women_Clothes listw[] = new Women_Clothes[10];
         listw[0] = new Women_Clothes("Midi Dress", "Dresses", "Beige", "Cotton", 24.99 );
@@ -90,7 +94,8 @@ public class Main {
         store.add_employee("Ionut", "Moise", "Manager", "0763621371"); //am adaugat in magazinul anterior angajatul Moise Ionut
         store.add_employee("Mariana", "Tanase", "Cashier", "0731131974");
 
-        store.Dispaly_staff(); // dupa ce imi afiseaza angajatii, imi da eroare ca e null vectorul:-?
+        store.Dispaly_staff(); // dupa ce imi afiseaza angajatii asa cum trebuie din vector, imi da exceptie ca e null vectorul:-?
+        //"Cannot invoke "Stores.Staff.getFirst_name()" because "this.staff[i]" is null"
 
 
     }

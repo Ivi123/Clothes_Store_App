@@ -1,10 +1,17 @@
 package Products;
 
-public class Women_Clothes {
+import Service.Serviciu;
+
+import java.util.Scanner;
+
+public class Women_Clothes implements Serviciu {
     static int nr_wclothes = 0;
     protected String name, category, color, fabric;
     protected double price;
     protected int code;
+
+    public Women_Clothes() {
+    }
 
     public Women_Clothes(String name, String category, String color, String fabric, double price) {
 
@@ -62,8 +69,54 @@ public class Women_Clothes {
         this.price = price;
     }
 
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public void setCode(int code) {
+        this.code = code;
+    }
+
+    @Override
+    public void AddProductW() {
+        Scanner add = new Scanner(System.in);
+        Women_Clothes[] insert = new Women_Clothes[10];
+
+        String name, category, color, fabric;
+        double price;
+        int code = 0;
+
+        for(int i = 0; i < insert.length; i++)
+        {
+            System.out.println("Introduceti numele: ");
+            insert[i] = new Women_Clothes();
+            name = add.next();
+            insert[i].setName(name);
+
+            System.out.println("Introduceti categoria: ");
+            category = add.next();
+            insert[i].setCategory(category);
+
+            System.out.println("Introduceti culoarea: ");
+            color = add.next();
+            insert[i].setColor(color);
+
+            System.out.println("Introduceti materialul: ");
+            fabric = add.next();
+            insert[i].setFabric(fabric);
+
+            System.out.println("Introduceti pretul: ");
+            price = add.nextDouble();
+            insert[i].setPrice(price);
+
+            insert[i].setCode(i);
+
+        }
+    }
+
     public void DisplayWCLTH()
     {
         System.out.println("Details of women product: \n" + "Name: " + name + "\nType: " + category + "\nColor: " + color + "\nFabric: " + fabric + "\nPrice: " + price + "$" + '\n' );
     }
+
 }
