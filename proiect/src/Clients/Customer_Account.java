@@ -61,38 +61,36 @@ public class Customer_Account implements Serviciu {
     }
 
     @Override
-
     public void create_account(){
 
         Scanner acc = new Scanner(System.in);
-        Customer_Account[] accounts = new Customer_Account[10];
+        Customer_Account accounts = new Customer_Account();
 
         String first_name, last_name, username, password;
         int age;
 
-        for (int i = 0; i < accounts.length; i++) {
+        System.out.println("Creare cont nou");
             System.out.println("Introduceti numele: ");
-            accounts[i] = new Customer_Account();
+            accounts = new Customer_Account();
             first_name = acc.next();
-            accounts[i].setFirst_name(first_name);
+            accounts.setFirst_name(first_name);
 
             System.out.println("Introduceti prenumele: ");
             last_name = acc.next();
-            accounts[i].setLast_name(last_name);
+            accounts.setLast_name(last_name);
 
             System.out.println("Introduceti varsta: ");
             age = acc.nextInt();
-            accounts[i].setAge(age);
+            accounts.setAge(age);
 
             System.out.println("Introduceti username-ul dorit: ");
             username = acc.next();
-            accounts[i].setUsername(username);
+            accounts.setUsername(username);
 
             System.out.println("Introduceti parola: ");
             password = acc.next();
-            accounts[i].setPassword(password);
+            accounts.setPassword(password);
 
 
-        }
     }
 }

@@ -7,7 +7,6 @@ import Products.Men_Sale;
 import Products.Women_Clothes;
 import Products.Women_Sale;
 import Stores.Physical_Store;
-import Stores.Staff;
 
 import java.util.*;
 
@@ -21,7 +20,8 @@ import java.util.*;
 //adaugare obiecte in cos + calcul pret total + calcul puncte
 //adaugare angajat in magazin
 //afisare angajati dintr-un anumit magazin..
-//sortare cresc/desc dupa pret la Men_Clothes
+//sortare in ordine alfabetica a magazinelor dupa locatie
+//sau sortare cresc a magazinelor dupa cod
 
 public class Main {
 
@@ -37,11 +37,6 @@ public class Main {
             System.out.println(listm[i].getCode());
             listm[i].DisplayMCLTH();
         }
-
-       // Arrays.sort(listm, Men_Clothes.NameComparator); // nu inteleg de ce nu merge aici"Cannot invoke "java.lang.Comparable.compareTo(Object)" because "a[runHi]" is null"
-       // Arrays.sort(listm);
-        // for (Men_Clothes c : listm)
-         //   System.out.println( "Name: " + c.getName()  + "Code: " + c.getCode() + "Price: " + c.getPrice());
 
 
         Women_Clothes listw[] = new Women_Clothes[10];
@@ -77,25 +72,38 @@ public class Main {
         acc.setLast_name("Gherman");
         acc.setAge(24);
         acc.setUsername("mgherman");
+        //creez un nou cont prin metoda
+        Customer_Account customer_account = new Customer_Account();
+        customer_account.create_account();
 
         //adaugare obiecte in cos + calcul pret total + calcul puncte
         Shopping_Bag sb = new Shopping_Bag(302, 103, "Popescu Radu"); // detalile cardului de fidelitate
         sb.addproduct();
         sb.addproduct2(listm[0]); //aici adaug in cos primul produs de la barbati
-        System.out.println("Your Fidelity Card has " + sb.getPoints() + " points!");
-
+        System.out.println("Your Fidelity Card has " + sb.getPoints() + " points!" + '\n');
 
         //adaugare angajat in magazin
 
-        Physical_Store store = new Physical_Store();
-        store.setLocation("Bucuresti");
-        store.setStore_id(13);
+        Physical_Store[] store = new Physical_Store[3];
 
-        store.add_employee("Ionut", "Moise", "Manager", "0763621371"); //am adaugat in magazinul anterior angajatul Moise Ionut
-        store.add_employee("Mariana", "Tanase", "Cashier", "0731131974");
+        Physical_Store store1 = new Physical_Store("Bucuresti",3,0); // am initialiazt cu 0 nr de angajati pt ca ii bag mai tarziu in vectorul Staff
+        Physical_Store store2 = new Physical_Store("Arad", 5, 0);
+        Physical_Store store3 = new Physical_Store("Argeș", 7, 0);
 
-        store.Dispaly_staff(); // dupa ce imi afiseaza angajatii asa cum trebuie din vector, imi da exceptie ca e null vectorul:-?
-        //"Cannot invoke "Stores.Staff.getFirst_name()" because "this.staff[i]" is null"
+        store[0] = store1;
+        store[1] = store2;
+        store[2] = store3;
+        Arrays.sort(store);
+
+        int i = 0;
+        for (Physical_Store s : store){
+            System.out.println("Magazinul " + ++i + ": " + " Locatie: " + s.getLocation() + "  ID: " + s.getStore_id() + '\n' );
+        }
+
+        store[0].add_employee("Ionut", "Moise", "Manager", "0763621371"); //am adaugat in magazinul anterior angajatul Moise Ionut
+        store[0].add_employee("Mariana", "Tanase", "Cashier", "0731131974");
+
+        store[0].Dispaly_staff();
 
 
     }

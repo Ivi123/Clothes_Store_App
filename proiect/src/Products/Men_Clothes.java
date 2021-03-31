@@ -2,7 +2,6 @@ package Products;
 
 import Service.Serviciu;
 
-import java.util.Comparator;
 import java.util.Scanner;
 
 public class Men_Clothes implements Serviciu{
@@ -83,40 +82,6 @@ public class Men_Clothes implements Serviciu{
     {
         System.out.println("Details of men product: \n" + "Name: " + name + "\nType: " + category + "\nColor: " + color + "\nFabric: " + fabric + "\nPrice: " + price + "$" + '\n');
     }
-
-    /*@Override
-    public int compareTo(Men_Clothes o) {
-        double price = o.getPrice();
-        //cresc
-        return (int) (this.price - price);
-        //desc --  return (int) price - this.price
-    }*/
-
-
-  /*  public int compareTo(Men_Clothes o) {
-
-        int comparecode = ((Men_Clothes) o).getCode();
-
-        //ascending order
-        return this.code - comparecode;
-
-        //descending order
-        //return compareQuantity - this.quantity;
-
-    }
-
-    public static Comparator<Men_Clothes> NameComparator = new Comparator<Men_Clothes>() {
-        public int compare(Men_Clothes o1, Men_Clothes o2) {
-            String Name1 = o1.getName().toUpperCase();
-            String Name2 = o2.getName().toUpperCase();
-
-            //ascending order
-            return Name1.compareTo(Name2);
-
-            //descending order
-            //return Name2.compareTo(Name1);
-        }
-    };*/
 
     @Override
     public void AddProductM() {

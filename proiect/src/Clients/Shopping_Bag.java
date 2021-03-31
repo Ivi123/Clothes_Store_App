@@ -8,7 +8,6 @@ public class Shopping_Bag extends Fidelity_Card {
     private double Order_Value;
     private Men_Clothes men_clothes;
 
-    //cum fac ca aceasta clasa sa primeasca valori din clasele din Products(mai exact numele produselor si pretul lor)
     public Shopping_Bag(int card_id, int points, String owner ) {
         super(card_id, points, owner);
         this.Order_Value = Order_Value;
