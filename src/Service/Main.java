@@ -87,22 +87,22 @@ public class Main {
         //apoi aplic discountul si il afisez
         listms.get(0).Discount();
 
-//        //creez un obiect pt Custommer_Account
-//        Customer_Account acc = new Customer_Account();
-//        acc.setFirst_name("Marius");
-//        acc.setLast_name("Gherman");
-//        acc.setAge(24);
-//        acc.setUsername("mgherman");
-//        //creez un nou cont prin metoda
-//        Customer_Account customer_account = new Customer_Account();
-//        customer_account.create_account();
-//
-//        //adaugare obiecte in cos + calcul pret total + calcul puncte
-//        Shopping_Bag sb = new Shopping_Bag(302, 103, "Popescu Radu"); // detalile cardului de fidelitate
-//        sb.addproduct();
-//        sb.addproduct2(listm.get(0)); //aici adaug in cos primul produs de la barbati
-//        System.out.println("Your Fidelity Card has " + sb.getPoints() + " points!" + '\n');
-//        //adaugare angajat in magazin
+        //creez un obiect pt Custommer_Account
+        Customer_Account acc = new Customer_Account();
+        acc.setFirst_name("Marius");
+        acc.setLast_name("Gherman");
+        acc.setAge(24);
+        acc.setUsername("mgherman");
+        //creez un nou cont prin metoda
+        Customer_Account customer_account = new Customer_Account();
+        customer_account.create_account();
+
+        //adaugare obiecte in cos + calcul pret total + calcul puncte
+        Shopping_Bag sb = new Shopping_Bag(302, 103, "Popescu Radu"); // detalile cardului de fidelitate
+        sb.addproduct();
+        sb.addproduct2(listm.get(0)); //aici adaug in cos primul produs de la barbati
+        System.out.println("Your Fidelity Card has " + sb.getPoints() + " points!" + '\n');
+        //adaugare angajat in magazin
 
         ArrayList<Physical_Store> store = null;
         try{
@@ -125,6 +125,9 @@ public class Main {
         store.get(0).Dispaly_staff();
         int nr = store.get(0).getNr_ofemp();//am verificat nr de angajati pt primul magazin
         System.out.println(nr);
+
+        //scriere in fisierul Men_Clothes.csv
+        Scriere_MC.scriereMC('\n' + "blugi", "pantaloni", "bleu", "denim", 29  );
 
 
     }
