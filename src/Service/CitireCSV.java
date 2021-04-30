@@ -33,7 +33,6 @@ public class CitireCSV {
             haina.setColor(linie[2]);
             haina.setFabric(linie[3]);
             haina.setPrice(Double.parseDouble(linie[4]));
-            //Men_Clothes haina = new Men_Clothes(linie[0], linie[1], linie[2], linie[3], Double.parseDouble(linie[4]));
             haine.add(new Men_Clothes(haina));
         }
         return haine;
