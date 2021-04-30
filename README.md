@@ -14,8 +14,8 @@
 ### Acțiuni: 
 * Afisare haine barbati
 * Afisare haine femei
-* Aplicati discountul unui produs
-* Aplicati discountul unui produs (categorie: barbati) 
+* Aplicati discount-ul unui produs (categorie: femei)
+* Aplicati discount-ul unui produs (categorie: barbati) 
 * Creaza-ti un cont nou 
 * Adaugare obiecte in cos
 * Afisare lista magazine din tara 
