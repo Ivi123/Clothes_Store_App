@@ -20,8 +20,9 @@
 * Adaugare obiecte in cos
 * Afisare lista magazine din tara 
 * Adauga un nou angajat
-* Accesare baza de date:
-        *Afisare haine barbati
+
+## Accesare baza de date
+ * Afisare haine barbati
         *Afisare haine femei
         *Afisare haine reduse (categorie: femei)
         *Afisare haine reduse (categorie: barbati)
