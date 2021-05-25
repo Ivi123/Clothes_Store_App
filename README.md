@@ -21,14 +21,14 @@
 * Afisare lista magazine din tara 
 * Adauga un nou angajat
 * Accesare baza de date:
-      **Afisare haine barbati
-        Afisare haine femei
-        Afisare haine reduse (categorie: femei)
-        Afisare haine reduse (categorie: barbati)
-        Afisare magazine din tara
-        Inserare produs barbati
-        Inserare produs femei
-        Inserare magazin
-        Update pret produs (femei)
-        Update pret produs (barbati)
-        Stergere magazin
+        *Afisare haine barbati
+        *Afisare haine femei
+        *Afisare haine reduse (categorie: femei)
+        *Afisare haine reduse (categorie: barbati)
+        *Afisare magazine din tara
+        *Inserare produs barbati
+        *Inserare produs femei
+        *Inserare magazin
+        *Update pret produs (femei)
+        *Update pret produs (barbati)
+        *Stergere magazin
