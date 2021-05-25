@@ -37,15 +37,4 @@ public class Shopping_Bag extends Fidelity_Card {
 
     }
 
-    public double addproduct2(Men_Clothes m)//aici incerc sa iau obiecte din pachetul Products, dar trb sa ma gandesc mai bine cum iau din fiecare
-    {
-        String name = m.getName();
-        double price = m.getPrice();
-        int code = m.getCode();
-
-        Order_Value = Order_Value + price;
-        setPoints(Order_Value + getPoints());
-        return Order_Value;
-    }
-
 }

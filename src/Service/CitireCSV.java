@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class CitireCSV {
+
     public static ArrayList<Men_Clothes> citirem(String file_path) throws IllegalAccessException, InstantiationException {
         ArrayList<Men_Clothes> haine = new ArrayList<>();
         File fopen = new File(file_path);
